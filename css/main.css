@@ -1,0 +1,64 @@
+
+body {
+      padding: 50px;
+      background: linear-gradient(90deg, #2C5364, #0F2027);
+}
+body section {
+      width: 100%;
+}
+body section .container {
+      margin: auto;
+      width: 90%;
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 50px;
+}
+body section .container .col {
+      width: calc(100% / 3);
+}
+body section .container .col .item {
+      display: block;
+      margin: auto;
+      width: 60%;
+      height: 250px;
+      position: relative;
+}
+body section .container .col .item .image {
+      width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+}
+body section .container .col .item .image img {
+      display: block;
+      width: 100%;
+      transition: all 0.35s ease;
+}
+body section .container .col .item:hover .image img {
+      scale: 1.2;
+      filter: brightness(0.5);
+}
+body section .container .col .item .plus-square {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition-duration: .35s;
+}
+body section .container .col .item:hover .plus-square {
+      opacity: 1;
+}
+body section .container .col .item .plus-square button {
+      background-color: white;
+      border: none;
+}
+body section .container .col .item .plus-square button i {
+      color: #fff;
+      font-size: 30px;
+      transition-duration: .5s;
+}
+body section .container .col .item .plus-square button i:hover {
+      cursor: pointer;
+      color: yellow;
+      transform: rotate(180deg);
+}
