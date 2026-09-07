@@ -14,7 +14,7 @@ plus.forEach(function (e) {
   });
 });
 
-prev.forEach(function (e) {
+close.forEach(function (e) {
   e.addEventListener("click", function () {
     modal.style.opacity = "0";
     setTimeout(function () {
