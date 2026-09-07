@@ -76,6 +76,7 @@ body section .container .col .item .plus-square i:hover {
       justify-content: center;
       align-items: center;
       opacity: 0;
+      transition-duration: 0.5s;
 }
 
 .Modal .container {
