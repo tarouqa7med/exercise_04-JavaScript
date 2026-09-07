@@ -1,8 +1,14 @@
 
-myBtn = document.querySelectorAll("button");
+let plus_icon = document.getElementById("plus"),
+  modal = document.getElementById("modal");
 
-myBtn.forEach(function(myBtn) {
-  myBtn.addEventListener("click", function() {
-    alert("Hello World!");
-  });
-});
+plus_icon.addEventListener("click", function () {
+  console.log(plus_icon);
+}) 
+
+plus_icon.addEventListener("click", () => {
+  modal.classList.add("active");
+  setTimeout(function () {
+    modal.classList.add("show");
+  }, 1); 
+})
