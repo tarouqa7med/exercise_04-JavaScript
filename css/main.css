@@ -77,12 +77,7 @@ body section .container .col .item .plus-square i:hover {
       align-items: center;
       opacity: 0;
 }
-.Modal .active {
-      display: block;
-}
-.Modal .show {
-      opacity: 1;
-}
+
 .Modal .container {
       position: absolute;
       top: 50%;
