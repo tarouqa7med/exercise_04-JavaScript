@@ -1,64 +1,108 @@
 
 body {
-      padding: 50px;
+      margin: 0;
       background: linear-gradient(90deg, #2C5364, #0F2027);
 }
 body section {
+      padding-block: 50px;
       width: 100%;
 }
 body section .container {
       margin: auto;
-      width: 90%;
+      width: 80%;
+      max-width: 1200px;
       display: flex;
+      justify-content: center;
+      align-items: center;
       flex-wrap: wrap;
-      row-gap: 50px;
-}
-body section .container .col {
-      width: calc(100% / 3);
+      gap: 50px;
 }
 body section .container .col .item {
       display: block;
       margin: auto;
-      width: 60%;
-      height: 250px;
-      position: relative;
-}
-body section .container .col .item .image {
-      width: 100%;
+      max-width: 300px;
+      max-height: 300px;
       border-radius: 10px;
+      position: relative;
       overflow: hidden;
 }
-body section .container .col .item .image img {
+body section .container .col .item img {
       display: block;
       width: 100%;
+      height: 100%;
       transition: all 0.35s ease;
 }
-body section .container .col .item:hover .image img {
+body section .container .col .item:hover img {
       scale: 1.2;
-      filter: brightness(0.5);
 }
 body section .container .col .item .plus-square {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      background-color: #00000080;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       opacity: 0;
       transition-duration: .35s;
 }
 body section .container .col .item:hover .plus-square {
       opacity: 1;
 }
-body section .container .col .item .plus-square button {
-      background-color: white;
-      border: none;
-}
-body section .container .col .item .plus-square button i {
+body section .container .col .item .plus-square i {
       color: #fff;
       font-size: 30px;
       transition-duration: .5s;
 }
-body section .container .col .item .plus-square button i:hover {
+body section .container .col .item .plus-square i:hover {
       cursor: pointer;
       color: yellow;
       transform: rotate(180deg);
+}
+
+/* --------- Modal --------- */
+
+.Modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: #00000080;
+}
+.Modal .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 450px;
+      height: 450px;
+      background-color: red;
+      border-radius: 10px;
+      overflow: hidden;
+}
+.Modal .container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+}
+.Modal .container i {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(90deg, #2C5364, #0F2027);
+      color: #F9EC31;
+      font-size: 14px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+}
+.Modal .container .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
 }
