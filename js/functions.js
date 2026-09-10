@@ -1,5 +1,5 @@
 
-let nextImageIndex, prevImageIndex;
+let nextImageIndex, prevImageIndex, Li_Index;
 
 function openModal() {
         modal.classList.add("active");
@@ -48,8 +48,4 @@ function getPrevNumber() {
                 prevLiIndex = li_Array.length - 1;
                 Li_Index = li_Array.length - 1;
         }
-}
-function makeActive() {
-        console.log(Li_Index)
-        console.log(Li_IndexHTML)
 }

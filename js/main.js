@@ -10,15 +10,13 @@ let plusBtns = document.querySelectorAll(".col .plusBtn"),
         li = document.querySelectorAll("li"),
         li_Array = Array.from(li);
 
-let imageIndex, Li_Index;
+let imageIndex;
 
 plusBtns.forEach(function (plusBtn) {
         plusBtn.addEventListener("click", function () {
                 let currentImg = plusBtn.parentElement.previousElementSibling,
                         imgSrc = currentImg.getAttribute("src");
                 imageIndex = imagesArray.indexOf(currentImg);
-                Li_Index = imageIndex;
-                Li_IndexHTML = li_Array[imageIndex];
 
                 modal.querySelector("img").setAttribute("src", imgSrc);
                 openModal();
