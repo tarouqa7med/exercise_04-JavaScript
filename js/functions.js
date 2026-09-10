@@ -1,4 +1,6 @@
 
+let nextImageIndex, prevImageIndex;
+
 function openModal() {
         modal.classList.add("active");
         setTimeout(function () {
@@ -12,7 +14,7 @@ function closeModal() {
         }, 500);
 }
 function getNextImage() {
-        let nextImageIndex = ++imageIndex;
+        nextImageIndex = ++imageIndex;
 
         if (nextImageIndex >= imagesArray.length) {
                 nextImageIndex = 0;
@@ -22,28 +24,32 @@ function getNextImage() {
         modalImg.setAttribute("src", newAttribute);
 }
 function getNextNumber() {
-        let nextLiIndex = ++LiIndex;
-
-        if (nextLiIndex >= 9) {
+        nextLiIndex = ++Li_Index;
+        
+        if (nextLiIndex >= li_Array.length) {
                 nextLiIndex = 0;
-                LiIndex = 0;
+                Li_Index = 0;
         }
 }
 function getPrevImage() {
-        let prevImageIndex = --imageIndex;
+        prevImageIndex = --imageIndex;
         
         if (prevImageIndex <= -1) {
-                prevImageIndex = 8;
-                imageIndex = 8;
+                prevImageIndex = imagesArray.length - 1;
+                imageIndex = imagesArray.length - 1;
         }
         let newAttribute = imagesArray[prevImageIndex].getAttribute("src");
         modalImg.setAttribute("src", newAttribute);
 }
 function getPrevNumber() {
-        let prevLiIndex = --LiIndex;
+        prevLiIndex = --Li_Index;
 
         if (prevLiIndex <= -1) {
-                prevLiIndex = 8;
-                LiIndex = 8;
+                prevLiIndex = li_Array.length - 1;
+                Li_Index = li_Array.length - 1;
         }
+}
+function makeActive() {
+        console.log(Li_Index)
+        console.log(Li_IndexHTML)
 }

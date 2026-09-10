@@ -7,16 +7,18 @@ let plusBtns = document.querySelectorAll(".col .plusBtn"),
         prevBtn = modal.querySelector(".prev"),
         images = document.querySelectorAll(".image"),
         imagesArray = Array.from(images),
-        li = document.querySelectorAll("li");
+        li = document.querySelectorAll("li"),
         li_Array = Array.from(li);
 
-let imageIndex, LiIndex;
+let imageIndex, Li_Index;
 
 plusBtns.forEach(function (plusBtn) {
         plusBtn.addEventListener("click", function () {
                 let currentImg = plusBtn.parentElement.previousElementSibling,
                         imgSrc = currentImg.getAttribute("src");
                 imageIndex = imagesArray.indexOf(currentImg);
+                Li_Index = imageIndex;
+                Li_IndexHTML = li_Array[imageIndex];
 
                 modal.querySelector("img").setAttribute("src", imgSrc);
                 openModal();
