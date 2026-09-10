@@ -1,37 +1,40 @@
-let plus = document.querySelectorAll(".plus"),
-  close = document.querySelectorAll(".close"),
-  next = document.querySelectorAll(".next"),
-  prev = document.querySelectorAll(".prev"),
-  modal = document.querySelector(".Modal"),
-  box = document.querySelector(".box");
+let plusBtns = document.querySelectorAll(".col .plusBtn"),
+        modal = document.getElementById("modal"),
+        box = modal.firstElementChild,
+        closeBtn = modal.querySelector(".close"),
+        modalImg = document.querySelector(".Modal img"),
+        nextBtn = modal.querySelector(".next"),
+        prevBtn = modal.querySelector(".prev"),
+        images = document.querySelectorAll(".image"),
+        imagesArray = Array.from(images),
+        li = document.querySelectorAll("li");
+        li_Array = Array.from(li);
 
-plus.forEach(function (e) {
-  e.addEventListener("click", function () {
-    modal.style.display = "block";
-    setTimeout(function () {
-      modal.style.opacity = "1";
-    }, 1);
-  });
+let imageIndex, LiIndex;
+
+plusBtns.forEach(function (plusBtn) {
+        plusBtn.addEventListener("click", function () {
+                let currentImg = plusBtn.parentElement.previousElementSibling,
+                        imgSrc = currentImg.getAttribute("src");
+                imageIndex = imagesArray.indexOf(currentImg);
+
+                modal.querySelector("img").setAttribute("src", imgSrc);
+                openModal();
+        });
 });
 
-close.forEach(function (e) {
-  e.addEventListener("click", function () {
-    modal.style.opacity = "0";
-    setTimeout(function () {
-      modal.style.display = "none";
-    }, 1000);
-  });
+modal.addEventListener("click", closeModal);
+
+box.addEventListener("click", function (eee) {
+        eee.stopPropagation();
 });
 
-modal.addEventListener("click", () => {
-  console.log("Modal clicked");
-  modal.style.opacity = "0";
-    setTimeout(function () {
-      modal.style.display = "none";
-    }, 500);
-  });
+closeBtn.addEventListener("click", closeModal);
 
-box.addEventListener("click", (event) => {
-  event.stopPropagation();
-  console.log("Box clicked");
-});
+nextBtn.addEventListener("click", getNextImage);
+
+nextBtn.addEventListener("click", getNextNumber);
+
+prevBtn.addEventListener("click", getPrevImage);
+
+prevBtn.addEventListener("click", getPrevNumber);

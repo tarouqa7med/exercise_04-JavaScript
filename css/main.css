@@ -78,7 +78,12 @@ body section .container .col .item .plus-square i:hover {
       opacity: 0;
       transition-duration: 0.5s;
 }
-
+.Modal.active {
+      display: block;
+}
+.Modal.show {
+      opacity: 1;
+}
 .Modal .container {
       position: absolute;
       top: 50%;
