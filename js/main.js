@@ -10,7 +10,7 @@ let plusBtns = document.querySelectorAll(".col .plusBtn"),
         li = document.querySelectorAll("li"),
         li_Array = Array.from(li);
 
-let imageIndex;
+let imageIndex, nextImageIndex, prevImageIndex, Li_Index, plusBtn, currentImg;
 
 plusBtns.forEach(function (plusBtn) {
         plusBtn.addEventListener("click", function () {
@@ -33,8 +33,8 @@ closeBtn.addEventListener("click", closeModal);
 
 nextBtn.addEventListener("click", getNextImage);
 
-nextBtn.addEventListener("click", getNextNumber);
-
 prevBtn.addEventListener("click", getPrevImage);
 
-prevBtn.addEventListener("click", getPrevNumber);
+li.forEach(function (li) {
+        li.addEventListener("click", getClickedNumberAndImage);
+});

@@ -1,7 +1,11 @@
 
-let nextImageIndex, prevImageIndex, Li_Index;
-
 function openModal() {
+        li.forEach(function (li) {
+                li.classList.remove("active");
+        })
+        let currentLi = li_Array[imageIndex];
+        currentLi.classList.add("active");
+        
         modal.classList.add("active");
         setTimeout(function () {
                 modal.classList.add("show");
@@ -22,14 +26,19 @@ function getNextImage() {
         }
         let newAttribute = imagesArray[nextImageIndex].getAttribute("src");
         modalImg.setAttribute("src", newAttribute);
-}
-function getNextNumber() {
+
         nextLiIndex = ++Li_Index;
         
         if (nextLiIndex >= li_Array.length) {
                 nextLiIndex = 0;
                 Li_Index = 0;
         }
+
+        li.forEach(function (li) {
+                li.classList.remove("active");
+        })
+        let currentLi = li_Array[imageIndex];
+        currentLi.classList.add("active");
 }
 function getPrevImage() {
         prevImageIndex = --imageIndex;
@@ -40,12 +49,23 @@ function getPrevImage() {
         }
         let newAttribute = imagesArray[prevImageIndex].getAttribute("src");
         modalImg.setAttribute("src", newAttribute);
-}
-function getPrevNumber() {
+
         prevLiIndex = --Li_Index;
 
         if (prevLiIndex <= -1) {
                 prevLiIndex = li_Array.length - 1;
                 Li_Index = li_Array.length - 1;
         }
+
+        li.forEach(function (li) {
+                li.classList.remove("active");
+        })
+        let currentLi = li_Array[imageIndex];
+        currentLi.classList.add("active");
+}
+function getClickedNumberAndImage() {
+        li.forEach(function (li) {
+                li.classList.remove("active");
+        })
+        this.classList.add("active");
 }
