@@ -113,6 +113,9 @@ body section .container .col .item .plus-square i:hover {
       align-items: center;
       cursor: pointer;
 }
+.Modal .container i:active {
+      background: white;
+}
 .Modal .container .close {
       position: absolute;
       top: 20px;

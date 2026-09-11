@@ -33,6 +33,28 @@ closeBtn.addEventListener("click", closeModal);
 
 nextBtn.addEventListener("click", getNextImage);
 
+document.addEventListener("keydown", function (e) {
+        if (modal.classList.contains("active")) {
+                if (e.key === "ArrowRight") {
+                        getNextImage();
+                }
+        }
+});
+document.addEventListener("keydown", function (e) {
+        if (modal.classList.contains("active")) {
+                if (e.key === "ArrowLeft") {
+                        getPrevImage();
+                }
+        }
+});
+document.addEventListener("keydown", function (e) {
+        if (modal.classList.contains("active")) {
+                if (e.key === "Escape") {
+                        closeModal();
+                }
+        }
+});
+
 prevBtn.addEventListener("click", getPrevImage);
 
 li.forEach(function (li) {

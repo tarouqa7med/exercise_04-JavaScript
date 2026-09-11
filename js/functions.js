@@ -10,12 +10,15 @@ function openModal() {
         setTimeout(function () {
                 modal.classList.add("show");
         }, 1);
+
+        console.log("Modal opened");
 }
 function closeModal() {
         modal.classList.remove("show");
         setTimeout(function () {
                 modal.classList.remove("active");
         }, 500);
+        console.log("Modal closed");
 }
 function getNextImage() {
         nextImageIndex = ++imageIndex;
@@ -39,6 +42,8 @@ function getNextImage() {
         })
         let currentLi = li_Array[imageIndex];
         currentLi.classList.add("active");
+
+        console.log("Next image loaded");
 }
 function getPrevImage() {
         prevImageIndex = --imageIndex;
@@ -62,10 +67,14 @@ function getPrevImage() {
         })
         let currentLi = li_Array[imageIndex];
         currentLi.classList.add("active");
+
+        console.log("Previous image loaded");
 }
 function getClickedNumberAndImage() {
         li.forEach(function (li) {
                 li.classList.remove("active");
         })
         this.classList.add("active");
+
+        console.log("Number Clicked");
 }
