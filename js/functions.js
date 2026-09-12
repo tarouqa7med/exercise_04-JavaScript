@@ -75,6 +75,13 @@ function getClickedNumberAndImage() {
                 li.classList.remove("active");
         })
         this.classList.add("active");
-
-        console.log("Number Clicked");
+        
+        while (this.classList.contains("active")) {
+                let index = li_Array.indexOf(this);
+                let newImage = imagesArray[index];
+                let newAttribute = newImage.getAttribute("src");
+                modalImg.setAttribute("src", newAttribute);
+                imageIndex = index;
+                break;
+        }
 }
